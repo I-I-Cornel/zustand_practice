@@ -1,5 +1,6 @@
 import { create } from "zustand"
 import { immer } from "zustand/middleware/immer"
+import { createSelectors } from "../utils/createSelectors"
 
 type TCatStoreState = {
     cats: {
@@ -12,7 +13,7 @@ type TCatStoreState = {
     totalCats: ()=> void,
 }
 
-export const useCatStore = create<TCatStoreState>()
+export const useCatStore = createSelectors(create<TCatStoreState>()
 (immer((set, get) => ({
     cats: {
         bigCats: 0,
@@ -32,4 +33,4 @@ export const useCatStore = create<TCatStoreState>()
         state.cats.smallCats = 0;
         state.cats.bigCats = 0;
     })}
-})))
+}))));
