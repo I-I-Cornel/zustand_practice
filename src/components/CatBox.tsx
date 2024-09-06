@@ -20,6 +20,7 @@ const CatBox = () => {
             <h1>Cat Box</h1>
             <p>big cats {bigCats}</p>
             <p>small cats {smallCats}</p>
+            <p>{Math.random()}</p>
             <div className="">
                 <button onClick={increaseBigCats}>add big cats</button>
                 <button onClick={increaseSmallCats}>add small cats</button>
