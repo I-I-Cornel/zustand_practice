@@ -12,5 +12,6 @@ export const useBearStore = create<TBearStoreState>()(devtools((set) => ({
   increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
   removeAllBears: () => set({ bears: 0 }),
 }), {
-  enabled: false,
+  enabled: true,
+  name: "bear store",
 }))
